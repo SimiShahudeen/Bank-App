@@ -1,0 +1,18 @@
+<div class="row pt-5">
+  <div class=" col-md-7">
+    <div class=" mt-5 p-5 ">
+      <form action="" class="form-control p-3 ms-5 w-75" style="border:0px;">
+        <h2 class="text-center">{{formName}}</h2>
+        <input (change)="unameChange($event)" type="text" placeholder="enter user id" class="w-100 form-control my-3">
+        <input type="password" [placeholder]="placeholderName" class="w-100 form-control my-3">
+        <div class="d-flex justify-content-center">
+          <button (click)="method1()" class="btn btn-info">Login</button>
+        </div>
+        <h6 class="text-center my-2 text-secondary">don't have account? <a href="" style="text-decoration: none;">create account</a></h6>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <img src="/assets/Images/wallpaper1.png" alt="" width="90%">
+  </div>
+</div>
