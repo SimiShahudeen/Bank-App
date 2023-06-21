@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPageComponent implements OnInit {
   formName = 'Login Here'
   placeholderName ='enter password'
+  uname:any
 
   constructor() {
 
@@ -19,7 +20,6 @@ export class LoginPageComponent implements OnInit {
     alert('button pressed')
   }
   unameChange(event :any){
-    console.log(event.target.value);
-    
+    this.uname=event.target.value
   }
 }
