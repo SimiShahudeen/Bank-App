@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -9,20 +11,17 @@ export class LoginPageComponent implements OnInit {
   formName = 'Login Here'
   placeholderName ='enter password'
   uname:any
-  pd:any
 
-  constructor() {
+  constructor(private a1:Router) {
 
   }
   ngOnInit(): void {
 
   }
-  method1(arg1:any , arg2:any){
-    // console.log(arg1.value, arg2.value);
-    this.uname = arg1.value;
-    this.pd = arg2.value;
-    console.log(this.uname,this.pd);
-    alert('login')
+  method1(){
+    // alert(`${this.a1.sdata} ${this.a1.method2()}`)
+    this.a1.navigateByUrl('home')
   }
+  
   
 }
