@@ -25,7 +25,12 @@ export class RegisterComponent implements OnInit {
     // console.log(this.acno, this.uname, this.pwd);
 
     if (this.registerForm.valid) {
-      alert('register works')
+      if(this.registerForm.value.psw==this.registerForm.value.cpsw){
+        alert('register works')
+      }
+      else{
+        alert('password does not match')
+      }
     }
     else {
       alert('invalid form')
