@@ -3,11 +3,25 @@
     <div class=" mt-4 p-5 ">
       <form [formGroup]="registerForm" action="" (ngSubmit)="SignUp()" class="form-control p-3 ms-5 w-75" style="border-radius: 10px;">
         <h2 class="text-center">Sign Up</h2>
-        <input formControlName="acno" id="ac-num" name="account-num" type="text" placeholder="account number"
-          class="w-100 form-control my-3">
+        <div>
+          <input formControlName="acno" id="ac-num" name="account-num" type="text" placeholder="account number"
+            class="w-100 form-control my-3">
+        </div>
+        <div *ngIf="(this.registerForm.get('acno')?.errors)&&(this.registerForm.get('acno')?.touched)">
+          <p class="text-danger">must contain numbers only</p>
+        </div>
         <input formControlName="uname" name="user-name" id="u-name" type="text" placeholder=" user id" class="w-100 form-control my-3">
+        <div *ngIf="(this.registerForm.get('uname')?.errors)&&(this.registerForm.get('uname')?.touched)">
+          <p class="text-danger">must contain charectors only</p>
+        </div>
         <input formControlName="psw" id="p-wd" name="pass-wd" type="password" placeholder="password" class="w-100 form-control my-3">
+        <div *ngIf="(this.registerForm.get('psw')?.errors)&&(this.registerForm.get('psw')?.touched)">
+          <p class="text-danger">must contain numbers only</p>
+        </div>
         <input formControlName="cpsw" id="p-wd-2" name="pass-wd-2" type="password" placeholder="confirm password" class="w-100 form-control my-3">
+        <div *ngIf="(this.registerForm.get('cpsw')?.errors)&&(this.registerForm.get('cpsw')?.touched)">
+          <p class="text-danger">must contain numbers only</p>
+        </div>
         <div class="d-flex justify-content-center my-2">
           <button type="submit" class="btn btn-info">sign up</button>
         </div>
