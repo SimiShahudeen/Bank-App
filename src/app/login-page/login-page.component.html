@@ -1,13 +1,18 @@
 <div class="row pt-5">
   <div class=" col-md-7">
     <div class=" mt-5 p-5 ">
-      <form action="" class="form-control p-3 ms-5 w-75" style="border:0px;">
+      <form [formGroup]="loginForm" action="" class="form-control p-3 ms-5 w-75" style="border:0px;">
         <h2 class="text-center">{{formName}}</h2>
-        <input  name="name" id="n1" type="text" placeholder="enter user id"
-          class="w-100 form-control my-3">
-        <input type="password" [placeholder]="placeholderName" class="w-100 form-control my-3">
+        <input formControlName="acno" name="name" id="acno" type="text" placeholder="enter acno" class="w-100 form-control my-3">
+        <div *ngIf="(this.loginForm.get('acno')?.errors)&&(this.loginForm.get('acno')?.touched)">
+          <p class="text-danger">must contain numbers only</p>
+        </div>
+        <input formControlName="psw" type="password" [placeholder]="placeholderName" class="w-100 form-control my-3">
+        <div *ngIf="(this.loginForm.get('psw')?.errors)&&(this.loginForm.get('psw')?.touched)">
+          <p class="text-danger">must contain numbers only</p>
+        </div>
         <div class="d-flex justify-content-center my-2">
-          <button (click)="method1()" class="btn btn-info">Login</button>
+          <button (click)="login()" class="btn btn-info">Login</button>
         </div>
         <h6 class="text-center my-2 text-secondary">don't have account?
           <a routerLink="register" style="text-decoration: none;">create account</a>

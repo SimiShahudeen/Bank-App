@@ -16,11 +16,11 @@
         </div>
         <input formControlName="psw" id="p-wd" name="pass-wd" type="password" placeholder="password" class="w-100 form-control my-3">
         <div *ngIf="(this.registerForm.get('psw')?.errors)&&(this.registerForm.get('psw')?.touched)">
-          <p class="text-danger">must contain numbers only</p>
+          <p class="text-danger">must contain password</p>
         </div>
         <input formControlName="cpsw" id="p-wd-2" name="pass-wd-2" type="password" placeholder="confirm password" class="w-100 form-control my-3">
         <div *ngIf="(this.registerForm.get('cpsw')?.errors)&&(this.registerForm.get('cpsw')?.touched)">
-          <p class="text-danger">must contain numbers only</p>
+          <p class="text-danger">must contain password</p>
         </div>
         <div class="d-flex justify-content-center my-2">
           <button type="submit" class="btn btn-info">sign up</button>
