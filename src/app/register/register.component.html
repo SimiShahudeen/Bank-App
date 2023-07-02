@@ -1,14 +1,15 @@
 <div class="row pt-5">
   <div class="col-md-7">
     <div class=" mt-4 p-5 ">
-      <form action="" class="form-control p-3 ms-5 w-75" style="border-radius: 10px;">
+      <form [formGroup]="registerForm" action="" (ngSubmit)="SignUp()" class="form-control p-3 ms-5 w-75" style="border-radius: 10px;">
         <h2 class="text-center">Sign Up</h2>
-        <input type="text" placeholder="account number" class="w-100 form-control my-3">
-        <input name="name" id="n1" type="text" placeholder=" user id"
+        <input formControlName="acno" id="ac-num" name="account-num" type="text" placeholder="account number"
           class="w-100 form-control my-3">
-        <input type="password" placeholder="password" class="w-100 form-control my-3">
+        <input formControlName="uname" name="user-name" id="u-name" type="text" placeholder=" user id" class="w-100 form-control my-3">
+        <input formControlName="psw" id="p-wd" name="pass-wd" type="password" placeholder="password" class="w-100 form-control my-3">
+        <input formControlName="cpsw" id="p-wd-2" name="pass-wd-2" type="password" placeholder="confirm password" class="w-100 form-control my-3">
         <div class="d-flex justify-content-center my-2">
-          <button class="btn btn-info">sign up</button>
+          <button type="submit" class="btn btn-info">sign up</button>
         </div>
         <h6 class="text-center my-2 text-secondary">already have account?
           <a routerLink="" style="text-decoration: none;"> login</a>

@@ -8,20 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  formName = 'Login Here'
-  placeholderName ='enter password'
-  uname:any
-
-  constructor(private a1:Router) {
+  formName:string = 'Login Here'
+  placeholderName = 'enter password'
+  constructor(private a1: Router) {
 
   }
   ngOnInit(): void {
 
   }
-  method1(){
-    // alert(`${this.a1.sdata} ${this.a1.method2()}`)
+  method1() {
     this.a1.navigateByUrl('home')
   }
-  
-  
+
+
 }
